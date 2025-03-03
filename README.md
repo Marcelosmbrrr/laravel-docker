@@ -1,6 +1,6 @@
 # About
 
-This is a docker setup for Laravel development and can be used with any of its versions. In addition, it can be used with Inertia and Livewire.
+This is a docker setup for Laravel development and can be used with any of its versions. This example was done with Laravel 10. In addition, it can be used with Inertia and Livewire.
 
 # Development
 
