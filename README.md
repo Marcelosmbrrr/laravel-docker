@@ -1,6 +1,6 @@
 # About
 
-This is a container setup for any version of Laravel vanilla, Laravel with Inertia and Livewire.
+This is a docker setup for Laravel development and can be used with any of its versions. In addition, it can be used with Inertia and Livewire.
 
 # Development
 
