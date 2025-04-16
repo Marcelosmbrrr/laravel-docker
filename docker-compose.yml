@@ -1,5 +1,3 @@
-version: "3"
-
 services:
     # image project
     app:
@@ -33,10 +31,10 @@ services:
         platform: linux/x86_64
         restart: unless-stopped
         environment:
-            MYSQL_DATABASE: ${DB_DATABASE}
-            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-            MYSQL_PASSWORD: ${DB_PASSWORD}
-            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_DATABASE: ${DB_DATABASE:-laravel}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+            MYSQL_PASSWORD: ${DB_PASSWORD:-userpass}
+            MYSQL_USER: ${DB_USERNAME:-username}
         volumes:
             - ./.docker/mysql/dbdata:/var/lib/mysql
         ports:
@@ -69,22 +67,7 @@ services:
         networks:
             - laravel
 
-    # Queue
-    queue:
-        build:
-            context: ./
-            dockerfile: Dockerfile
-        restart: unless-stopped
-        command: "php artisan queue:work"
-        volumes:
-            - ./:/var/www
-        depends_on:
-            - redis
-            - app
-        networks:
-            - laravel
-
-    # Redis
+    # redis
     redis:
         image: redis:latest
         networks:
