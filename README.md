@@ -19,6 +19,8 @@ NodeJS can run on local machine for development.
 <p>ERR_CONNECTION_REFUSED</p>
 <p>Solution: delete public/hot and rebuild the application</p>
 
+<p>Page reloading after navigation</p>
+<p>Solution: change session and cache drivers from database to redis or array</p>
 
 
 
